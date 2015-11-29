@@ -91,7 +91,7 @@ address .email {
 
 .slidesjs-previous {
 	border-right-width: 2px;
-    background-image: url(../images/previous.jpg);
+    background-image: url(../images/previous.png);
     position: absolute;
     left: 71px;
 }
@@ -103,9 +103,9 @@ address .email {
 
 .slidesjs-next {
 	border-left-width: 1px;
-	background-image: url(../images/next.jpg);
+	background-image: url(../images/next.png);
 	position: absolute;
-    left: 140px;
+    left: 141px;
 }
 
 .slidesjs-next:hover {

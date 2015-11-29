@@ -23,13 +23,17 @@ $(document).ready(function() {
   
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
     $('#map iframe').attr("width", "980");
-    
-}
+  }
 
   
   $('#form-start-button').on('click', function() {
     $('#main-form').show();
     $('#form-background').show();
+    $('#final-step').hide();
+    $('#second-step').hide();
+    $('#first-step').show();
+    $('#request-form').show();
+    alignCenter();
   });
   
   $('#close').on('click', function() {
