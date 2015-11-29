@@ -1,6 +1,7 @@
 $(function() {
   $('#slides').slidesjs({
-    width: 752,
+    // width: 752,
+    width: 960,
     height: 445,
     play: {
       active: false,
@@ -20,6 +21,12 @@ $(function() {
 
 $(document).ready(function() {
   
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    $('#map iframe').attr("width", "980");
+    
+}
+
+  
   $('#form-start-button').on('click', function() {
     $('#main-form').show();
     $('#form-background').show();
@@ -33,12 +40,19 @@ $(document).ready(function() {
   $('#next-step').on('click', function() {
     $('#first-step').hide();
     $('#second-step').show();
+    alignCenter();
   });
   
   $('#submit-btn').on('click', function() {
-    $('#second-step').hide();
+    $('#request-form').hide();
     $('#final-step').show();
+    alignCenter();
   });
     
   
 });
+
+var alignCenter = function() {
+  var semiwidth = $('#main-form').outerWidth() / 2;
+    $('#main-form').css('margin-left', "-" + semiwidth + "px");
+}

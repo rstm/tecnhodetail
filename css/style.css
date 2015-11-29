@@ -11,6 +11,11 @@ textarea:focus, input:focus, select:focus {
     outline: 0;
 }
 
+a {
+	color: black;
+	text-decoration: none;
+}
+
 /* #F6921E */
 
 body {
@@ -53,10 +58,11 @@ address .email {
 }
 
 #slides {
-	width: 752px;
+	/*width: 752px;*/
+	width: 960px;
 	height: 445px;
 	display:none;
-	margin-left: 208px;
+	/*margin-left: 208px;*/
 	margin-bottom: 67px;
 	overflow: initial !important;
 }
@@ -80,6 +86,7 @@ address .email {
     top: 226px;
 	background-repeat: no-repeat;
     background-position: center;
+	z-index: 12;
 }
 
 .slidesjs-previous {
@@ -178,7 +185,7 @@ address .email {
 }
 
 #products figure.second {
-	border: 4px solid #F6921E;
+	/*border: 4px solid #F6921E;*/
 }
 
 #products #download-price-list {
@@ -296,6 +303,17 @@ address .email {
 	margin: 65px auto 0;
 }
 
+
+@media only screen and (max-device-width: 480px) {
+	
+#map {
+	width: 960px;
+	margin: 65px auto 0;
+}
+
+}
+
+
 /* ----------- FOOTER ----------- */
 
 footer {
@@ -334,15 +352,15 @@ footer address {
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	margin-left: -351px;
-	margin-top: -450px;
-	padding: 0 162px 94px;
+	margin-left: -389px;
+	margin-top: -470px;
+	padding: 0px 103px 80px 162px;
 	display: none;
 }
 
 #main-form #close {
 	float: right;
-	margin: 13px -145px 20px 0;
+	margin: 24px -72px 27px 0px;
 	cursor: pointer;
 }
 
@@ -359,11 +377,11 @@ footer address {
 	font-weight: bold;
 	color: #B3B3B3;
 	font-size: 14px;
-	margin: 20px 0;
+	margin: 4px 0 64px;
 }
 
 #main-form .step-info span {
-	margin-right: 20px;
+	margin-right: 26px;
 }
 
 #main-form .step-info .active {
@@ -373,12 +391,12 @@ footer address {
 #main-form .field {
 	font-family: 'PT Serif';
 	font-size: 14px;
-	margin-bottom: 40px; 	
+	margin-bottom: 32px; 	
 }
 
 
 #main-form label {
-	width: 195px;
+	width: 189px;
 	display: inline-block;
 	vertical-align: top;
 }
@@ -392,6 +410,7 @@ footer address {
 	width: 174px;
 	height: 11px;
 	padding: 9px 0 9px 16px;
+	margin-top: -4px;
 }
 
 #main-form select {
@@ -410,8 +429,9 @@ footer address {
 }
 
 #main-form textarea {
-	width: 318px;
-	height: 158px;
+	width: 303px;
+	height: 138px;
+	margin-top: 3px;
 }
 
 #main-form input:focus, #main-form select:focus {
@@ -420,13 +440,14 @@ footer address {
 }
 
 #main-form .btn {
-	padding: 13px 23px;
-	margin-left: 196px;
-	margin-top: 20px;
+	padding: 4px 36px;
+	margin-left: 193px;
+	display: block;
+	margin-top: 36px;
 }
 
 #main-form .btn .arrow {
-	margin-left: 25px;
+	margin-left: 36px;
 }
 
 #request-form {
@@ -437,8 +458,25 @@ footer address {
 	/*display: none;*/
 }
 
+#first-step .btn {
+	width: 92px;
+}
+
 #second-step {
 	display: none;
+}
+
+#second-step .field {
+	margin-bottom: 48px;
+}
+
+#second-step .btn {
+	width: 111px;
+	margin-right: 58px;
+}
+
+#second-step .btn .arrow {
+	margin-left: 26px;
 }
 
 #final-step {
@@ -455,6 +493,6 @@ footer address {
 	clear: both;
 	float: left;
 	margin-right: 30px;
-	margin-top: 9px;
+	margin-top: 2px;
 }
 
