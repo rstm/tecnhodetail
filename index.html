@@ -93,8 +93,8 @@
 заказы наших клиентов.  Для немедленного оформления заявки <br>
 заполните, пожалуйста, форму
 		</p>
-		<button>
-			Заполнить<span id="arrow">></span>
+		<button class="btn" id="form-start-button">
+			Заполнить<span class="arrow"">></span>
 		</button>
 	</section>
 	
@@ -116,6 +116,101 @@
 		<span class="email">info@techodetail.ru</span>
 	</address>
 </footer>
+
+<div id="form-background">
+</div>
+
+<div id="main-form">
+	<img id="close" src="images/close.jpg">
+	
+	<form id="request-form">
+		<h2>Оставьте заявку</h2>
+		<div id="first-step">
+			
+			<img src="images/progress2.jpg">
+			<div class="step-info">
+				<span class="active">Информация об изделии</span>
+				<span>Контактная информация</span>
+			</div>
+			<div class="field">
+				<label>Наименование детали *</label>
+				<input type="text">
+			</div>
+			<div class="field">
+				<label>Вид обработки<br>
+	листового металла*</label>
+				<select>
+					<option>Лазерная резка</option>
+					<option>Пункт 2</option>
+				</select>
+			</div>
+			<div class="field">
+				<label>Количество, штук: *</label>
+				<input type="text">
+			</div>
+			<div class="field">
+				<label>Покрытие изготовленных 
+	деталей*</label>
+				<select id="color">
+					<option>Красный</option>
+					<option>Зеленый</option>
+				</select>
+				<select id="size">
+					<option>0,1 мм</option>
+					<option>0,2 мм</option>
+					<option>0,3 мм</option>
+				</select>
+			</div>
+			
+			<div class="field">
+				<label>Оптимальный срок<br>отгрузки:</label>
+				<input type="text">
+			</div>
+			
+			<div class="field">
+				<label>Дополнительно 
+	(особые требования 
+	к упаковке, доставке и т.п.):</label>
+				<textarea></textarea>
+			</div>
+			
+			<span class="btn" id="next-step">
+				Далее<span class="arrow">></span>
+			</span>
+			
+		</div>
+		
+		<div id="second-step">
+			<img src="images/progress3.jpg">
+			<div class="step-info">
+				<span>Информация об изделии</span>
+				<span class="active">Контактная информация</span>
+			</div>
+			<div class="field">
+				<label>Ваше имя:</label>
+				<input type="text">
+			</div>
+			<div class="field">
+				<label>Ваш e-mail:</label>
+				<input type="text">
+			</div>
+			<div class="field">
+				<label>Ваш номер телефона:</label>
+				<input type="text">
+			</div>
+			
+			<span class="btn" type="submit" id="submit-btn">
+				Отправить<span class="arrow"">></span>
+			</span>
+		</div>
+	</form>
+	
+	<div id="final-step">
+		<img src="images/ok.jpg">
+		<h2>Спасибо!</h2>
+		<p>Мы свяжемся с Вами в ближайшее время.</p>
+	</div>
+</div>
 
 <script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/jquery.slides.min.js"></script>

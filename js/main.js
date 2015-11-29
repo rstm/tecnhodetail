@@ -2,11 +2,6 @@ $(function() {
   $('#slides').slidesjs({
     width: 752,
     height: 445,
-    // navigation: true,
-    // pagination: {
-    //   active: true,
-    //   effect: "slide"
-    // },
     play: {
       active: false,
       auto: true,
@@ -21,4 +16,29 @@ $(function() {
       }
     }
   });
+});
+
+$(document).ready(function() {
+  
+  $('#form-start-button').on('click', function() {
+    $('#main-form').show();
+    $('#form-background').show();
+  });
+  
+  $('#close').on('click', function() {
+    $('#main-form').hide();
+    $('#form-background').hide();
+  })
+  
+  $('#next-step').on('click', function() {
+    $('#first-step').hide();
+    $('#second-step').show();
+  });
+  
+  $('#submit-btn').on('click', function() {
+    $('#second-step').hide();
+    $('#final-step').show();
+  });
+    
+  
 });
