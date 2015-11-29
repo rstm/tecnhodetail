@@ -63,6 +63,7 @@ address .email {
 	height: 445px;
 	display:none;
 	/*margin-left: 208px;*/
+	margin-left: -32px;
 	margin-bottom: 67px;
 	overflow: initial !important;
 }
