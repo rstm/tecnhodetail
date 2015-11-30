@@ -140,44 +140,44 @@
 			</div>
 			<div class="field">
 				<label>Наименование детали *</label>
-				<input type="text">
+				<input type="text" name="part_name">
 			</div>
 			<div class="field">
 				<label>Вид обработки<br>
 	листового металла*</label>
-				<select>
-					<option>Лазерная резка</option>
-					<option>Пункт 2</option>
+				<select name="treatment">
+					<option value="Лазерная резка">Лазерная резка</option>
+					<option value="Пункт 2">Пункт 2</option>
 				</select>
 			</div>
 			<div class="field">
 				<label>Количество, штук: *</label>
-				<input type="text">
+				<input type="text" name="number_of_parts">
 			</div>
 			<div class="field">
 				<label>Покрытие изготовленных 
 	деталей*</label>
-				<select id="color">
-					<option>Красный</option>
-					<option>Зеленый</option>
+				<select id="color" name="color">
+					<option value="Красный">Красный</option>
+					<option value="Зеленый">Зеленый</option>
 				</select>
-				<select id="size">
-					<option>0,1 мм</option>
-					<option>0,2 мм</option>
-					<option>0,3 мм</option>
+				<select id="size" name="size">
+					<option value="0,1 мм">0,1 мм</option>
+					<option value="0,2 мм">0,2 мм</option>
+					<option value="0,3 мм">0,3 мм</option>
 				</select>
 			</div>
 			
 			<div class="field">
 				<label>Оптимальный срок<br>отгрузки:</label>
-				<input type="text">
+				<input type="text" name="term">
 			</div>
 			
 			<div class="field">
 				<label>Дополнительно 
 	(особые требования 
 	к упаковке, доставке и т.п.):</label>
-				<textarea></textarea>
+				<textarea name="extra"></textarea>
 			</div>
 			
 			<span class="btn" id="next-step">
@@ -194,20 +194,20 @@
 			</div>
 			<div class="field">
 				<label>Ваше имя:</label>
-				<input type="text">
+				<input type="text" name="firstname">
 			</div>
 			<div class="field">
 				<label>Ваш e-mail:</label>
-				<input type="text">
+				<input type="text" name="email">
 			</div>
 			<div class="field">
 				<label>Ваш номер телефона:</label>
-				<input type="text">
+				<input type="text" name="phone_number">
 			</div>
 			
-			<span class="btn" type="submit" id="submit-btn">
+			<button class="btn" type="submit" id="submit-btn">
 				Отправить<span class="arrow"">></span>
-			</span>
+			</button>
 		</div>
 	</form>
 	

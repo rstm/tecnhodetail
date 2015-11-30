@@ -47,11 +47,33 @@ $(document).ready(function() {
     alignCenter();
   });
   
-  $('#submit-btn').on('click', function() {
-    $('#request-form').hide();
-    $('#final-step').show();
-    alignCenter();
-  });
+  // $('#submit-btn').on('click', function() {
+  //   $('#request-form').hide();
+  //   $('#final-step').show();
+  //   alignCenter();
+  // });
+  
+  
+  $("#request-form").submit(function(e) {
+    $('#submit-btn').html('Подождите...');
+    var url = "send_mail.php"; // the script where you handle the form input.
+    
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: $("#request-form").serialize(), // serializes the form's elements.
+           success: function(data)
+           {
+              alert(data); // show response from the php script.
+              $('#request-form').hide();
+              $('#final-step').show();
+              alignCenter();
+              $('#submit-btn').html('Отправить<span class="arrow"">></span>');
+           }
+         });
+
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+});
     
   
 });
