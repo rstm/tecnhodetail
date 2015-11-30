@@ -2,7 +2,7 @@
 if (isset($_POST['part_name']))
 {
 					
-	$to= 'm.rustem18@gmail.com';
+	$to= 'm.rustem18@gmail.com, info@technodetail.ru';
 	$subject = 'Онлайн-заказ';
 	
 	/*$headers = 'From: m.rustem18@gmail.com' . "\r\n" .
@@ -16,7 +16,8 @@ if (isset($_POST['part_name']))
 	//тема русским щрифтом
 	$subject = "=?UTF-8?B?".base64_encode($subject)."?=";
 	//формируем правильный заголовок в соответствии со стандартом
-	$headers = "Reply-To: $from \r\n". 
+	$headers = "From: $from \r\n". 
+	 		"Reply-To: $from \r\n". 
 			"MIME-Version: 1.0" . "\r\n" . 
 			"Content-type: text/html; charset=UTF-8" . "\r\n"; 
 
@@ -28,7 +29,7 @@ if (isset($_POST['part_name']))
 			<p>Покрытие изготовленных деталей: {$_POST['color']} {$_POST['size']}</p>
 			<p>Оптимальный срок отгрузки: {$_POST['term']}</p>
 			<p>Дополнительно: {$_POST['extra']}</p>
-			<h5>Контактная информация</h5>
+			<h4>Контактная информация</h4>
 			<p>Имя: {$_POST['firstname']}</p>
 			<p>Email: {$_POST['email']}</p>
 			<p>Номер телефона: {$_POST['phone_number']}</p>

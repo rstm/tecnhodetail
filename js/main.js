@@ -46,13 +46,7 @@ $(document).ready(function() {
     $('#second-step').show();
     alignCenter();
   });
-  
-  // $('#submit-btn').on('click', function() {
-  //   $('#request-form').hide();
-  //   $('#final-step').show();
-  //   alignCenter();
-  // });
-  
+    
   
   $("#request-form").submit(function(e) {
     $('#submit-btn').html('Подождите...');
@@ -64,7 +58,6 @@ $(document).ready(function() {
            data: $("#request-form").serialize(), // serializes the form's elements.
            success: function(data)
            {
-              alert(data); // show response from the php script.
               $('#request-form').hide();
               $('#final-step').show();
               alignCenter();
