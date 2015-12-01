@@ -353,31 +353,32 @@ footer address {
 	top: 50%;
 	left: 50%;
 	margin-left: -389px;
-	margin-top: -470px;
-	padding: 0px 103px 80px 162px;
+	margin-top: -330px;
+	padding: 0px 100px 30px 140px;
 	display: none;
 }
 
 #main-form #close {
 	float: right;
-	margin: 24px -72px 27px 0px;
-	cursor: pointer;
+    margin: 18px -74px 0px 0px;
+    cursor: pointer;
+    width: 28px;
 }
 
 #main-form h2 {
 	font-family: 'Kelson Sans';
-	font-size: 32px;
+	font-size: 28px;
 	font-weight: bold;
-	clear: right;
-	margin: 20px 0;
+	/*clear: right;*/
+	margin: 33px 0 20px;
 }
 
 #main-form .step-info {
 	font-family: 'Kelson Sans';
 	font-weight: bold;
 	color: #B3B3B3;
-	font-size: 14px;
-	margin: 4px 0 64px;
+	font-size: 12px;
+	margin: 4px 0 35px;
 }
 
 #main-form .step-info span {
@@ -390,8 +391,8 @@ footer address {
 
 #main-form .field {
 	font-family: 'PT Serif';
-	font-size: 14px;
-	margin-bottom: 32px; 	
+	font-size: 11px;
+	margin-bottom: 25px; 	
 }
 
 
@@ -408,9 +409,10 @@ footer address {
 	-moz-border-radius: 2px;
 	border-radius: 2px;
 	width: 174px;
-	height: 11px;
-	padding: 9px 0 9px 16px;
+	height: 8px;
+	padding: 8px 0 8px 14px;
 	margin-top: -4px;
+	font-size: 11px;
 }
 
 #main-form select {
@@ -429,8 +431,8 @@ footer address {
 }
 
 #main-form textarea {
-	width: 303px;
-	height: 138px;
+	width: 280px;
+	height: 80px;
 	margin-top: 3px;
 }
 
@@ -440,10 +442,10 @@ footer address {
 }
 
 #main-form .btn {
-	padding: 4px 36px;
+	padding: 3px 33px;
 	margin-left: 193px;
 	display: block;
-	margin-top: 36px;
+	margin-top: 20px;
 }
 
 #main-form .btn .arrow {
@@ -471,8 +473,8 @@ footer address {
 }
 
 #second-step .btn {
-	width: 192px;
-	height: 54px;
+	width: 180px;
+	height: 50px;
 	margin-right: 58px;
 }
 

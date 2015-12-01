@@ -49,6 +49,8 @@ $(document).ready(function() {
     
   
   $("#request-form").submit(function(e) {
+    
+              
     $('#submit-btn').html('Подождите...');
     var url = "send_mail.php"; // the script where you handle the form input.
     
@@ -59,7 +61,10 @@ $(document).ready(function() {
            success: function(data)
            {
               $('#request-form').hide();
+              $('#main-form').css('margin-top', "-150px");
+              
               $('#final-step').show();
+              
               alignCenter();
               $('#submit-btn').html('Отправить<span class="arrow"">></span>');
            }
