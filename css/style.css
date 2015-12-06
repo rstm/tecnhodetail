@@ -20,6 +20,10 @@ a {
 	display: none;
 }
 
+.top_align {
+	vertical-align: top !important;
+}
+
 /* #F6921E */
 
 body {
@@ -299,7 +303,11 @@ address .email {
 	text-align: center;
 	margin-top: 103px;
 	width: 960px;
-	margin: 0 auto;
+	margin: 103px auto 0;
+}
+
+#clients h2 {
+	margin-bottom: 50px;
 }
 
 #clients .clients-logos {
@@ -396,8 +404,6 @@ footer address {
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	margin-left: -389px;
-	margin-top: -330px;
 	padding: 0px 100px 30px 140px;
 	display: none;
 }
@@ -443,7 +449,7 @@ footer address {
 #main-form label {
 	width: 189px;
 	display: inline-block;
-	vertical-align: top;
+	vertical-align: middle;
 }
 
 #main-form input, #main-form select, #main-form textarea {
@@ -453,16 +459,21 @@ footer address {
 	-moz-border-radius: 2px;
 	border-radius: 2px;
 	width: 174px;
-	height: 8px;
-	padding: 8px 0 8px 14px;
-	margin-top: -4px;
+	height: 26px;
+	padding-left: 14px;
 	font-size: 14px;
+	vertical-align: middle;
 }
 
 #main-form select {
-	width: 192px;
+	width: 190px;
 	height: 29px;
 	padding: 0 16px;
+	cursor: pointer;
+}
+
+#main-form .with_upload_link {
+	margin-bottom: 15px;
 }
 
 #main-form #color {
@@ -480,9 +491,23 @@ footer address {
 	margin-top: 3px;
 }
 
-#main-form input:focus, #main-form select:focus {
+#main-form input:focus, #main-form select:focus, #main-form textarea:focus {
 	border: 1px solid #E6E6E6;
 	background-color: #FCFCFC;
+}
+
+#upload {
+    display:none
+}
+
+#upload_link {
+	display: block;
+    margin-left: 191px;
+    font-size: 13px;
+    margin-top: 5px;
+    color: #0071BC;
+    border-bottom: 1px dashed #0071BC;
+    width: 122px;
 }
 
 #main-form .btn {
@@ -528,6 +553,9 @@ footer address {
 
 #final-step {
 	display: none;
+	width: 440px;
+	height: 139px;
+	padding-top: 94px;
 }
 
 #final-step p {
@@ -540,6 +568,18 @@ footer address {
 	clear: both;
 	float: left;
 	margin-right: 30px;
-	margin-top: -12px;
+}
+
+.not_valid {
+	border: 1px solid #DC4545 !important;
+}
+
+span.error {
+    margin-left: 8px;
+    color: #DC4545;
+}
+
+#final-step h2{
+	margin: 0 0 17px;
 }
 

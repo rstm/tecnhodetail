@@ -42,35 +42,48 @@ $(document).ready(function() {
   })
   
   $('#next-step').on('click', function() {
-    $('#first-step').hide();
-    $('#second-step').show();
-    alignCenter();
+    
+    var validForm = checkFormValid("#first-step");
+    
+    if (validForm) {
+      $('#first-step').hide();
+      $('#second-step').show();
+      alignCenter();
+    }
   });
+  
+  $( "input[required='required']" ).keypress(function() {
+    $(this).removeClass('not_valid');
+    $(this).siblings('.error').remove();
+  }); 
     
   
   $("#request-form").submit(function(e) {
-    
-              
+         
+    var validForm = checkFormValid("#second-step");
+         
+    if (validForm) {
       $('#submit-btn').html('Подождите...');
       var url = "send_mail.php"; // the script where you handle the form input.
       
       $.ajax({
-            type: "POST",
-            url: url,
-            data: $("#request-form").serialize(), // serializes the form's elements.
-            success: function(data)
-            {
-                $('#request-form').hide();
-                $('#main-form').css('margin-top', "-150px");
-                
-                $('#final-step').show();
-                
-                alignCenter();
-                $('#submit-btn').html('Отправить<span class="arrow"">></span>');
-            }
-          });
-  
-      e.preventDefault(); // avoid to execute the actual submit of the form.
+          type: "POST",
+          url: url,
+          data: $("#request-form").serialize(), // serializes the form's elements.
+          success: function(data)
+          {
+              $('#request-form').hide();
+              $('#main-form').css('margin-top', "-150px");
+              
+              $('#final-step').show();
+              
+              alignCenter();
+              $('#submit-btn').html('Отправить<span class="arrow"">></span>');
+          }
+        });
+    }
+
+    e.preventDefault(); // avoid to execute the actual submit of the form.
   });
     
   $('#clients .previous').on('click', function() {
@@ -93,9 +106,35 @@ $(document).ready(function() {
     });
   });
   
+    $("#upload_link").on('click', function(e){
+        e.preventDefault();
+        $("#upload:hidden").trigger('click');
+    });
+  
 });
 
 var alignCenter = function() {
   var semiwidth = $('#main-form').outerWidth() / 2;
-    $('#main-form').css('margin-left', "-" + semiwidth + "px");
+  $('#main-form').css('margin-left', "-" + semiwidth + "px");
+  var semiheight = $('#main-form').outerHeight() / 2;
+  $('#main-form').css('margin-top', "-" + semiheight + "px");
+};
+
+var checkFormValid = function(selector) {
+  var valid_form = true;
+    $( selector + " input[required='required']" ).each(function() {
+			if(!$.trim(this.value).length) {
+        var input = $(this);
+                
+        // if (!$(this).hasClass('not_valid')) {
+        //   $( input ).after( "<span class='error'>Не заполнено!</span>" );
+        // }
+        
+        $(this).addClass('not_valid');
+				valid_form = false;
+			}
+		});
+    
+    return valid_form;
 }
+

@@ -138,7 +138,7 @@
 <div id="main-form">
 	<img id="close" src="images/close.jpg">
 	
-	<form id="request-form">
+	<form id="request-form" novalidate>
 		<h2>Оставьте заявку</h2>
 		<div id="first-step">
 			
@@ -149,23 +149,27 @@
 			</div>
 			<div class="field">
 				<label>Наименование детали *</label>
-				<input type="text" name="part_name">
+				<input type="text" name="part_name" required="required">
 			</div>
-			<div class="field">
-				<label>Вид обработки<br>
-	листового металла*</label>
+			<div class="field with_upload_link">
+				<label>Вид обработки<br>листового металла*</label>
 				<select name="treatment">
 					<option value="Лазерная резка">Лазерная резка</option>
-					<option value="Пункт 2">Пункт 2</option>
+					<option value="Рубка">Рубка</option>
+					<option value="Штамповка">Штамповка</option>
+					<option value="Гибка">Гибка</option>
 				</select>
+				<a href="" id="upload_link">Прикрепить чертеж</a>
 			</div>
+			
+			<input id="upload" type="file" name="drawing"/>
+			
 			<div class="field">
 				<label>Количество, штук: *</label>
-				<input type="text" name="number_of_parts">
+				<input type="text" name="number_of_parts" required="required">
 			</div>
 			<div class="field">
-				<label>Покрытие изготовленных<br>
-	деталей*</label>
+				<label>Покрытие изготовленных<br>деталей*</label>
 				<select id="color" name="color">
 					<option value="Красный">Красный</option>
 					<option value="Зеленый">Зеленый</option>
@@ -183,9 +187,11 @@
 			</div>
 			
 			<div class="field">
-				<label>Дополнительно 
-	(особые<br>требования 
-	к упаковке,<br>доставке и т.п.):</label>
+				<label class="top_align">
+					Дополнительно (особые<br>
+					требования к упаковке,<br>
+					доставке и т.п.):
+				</label>
 				<textarea name="extra"></textarea>
 			</div>
 			
@@ -206,8 +212,8 @@
 				<input type="text" name="firstname">
 			</div>
 			<div class="field">
-				<label>Ваш e-mail:</label>
-				<input type="text" name="email">
+				<label>Ваш e-mail*:</label>
+				<input type="text" name="email" required="required">
 			</div>
 			<div class="field">
 				<label>Ваш номер телефона:</label>
