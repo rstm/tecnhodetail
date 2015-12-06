@@ -66,10 +66,16 @@ $(document).ready(function() {
       $('#submit-btn').html('Подождите...');
       var url = "send_mail.php"; // the script where you handle the form input.
       
+      var fd = new FormData(document.getElementById("request-form"));
+      
       $.ajax({
           type: "POST",
           url: url,
-          data: $("#request-form").serialize(), // serializes the form's elements.
+          // data: $("#request-form").serialize(), // serializes the form's elements.
+          data: fd, // serializes the form's elements.
+          enctype: 'multipart/form-data',
+          processData: false,  // tell jQuery not to process the data
+          contentType: false,  
           success: function(data)
           {
               $('#request-form').hide();
