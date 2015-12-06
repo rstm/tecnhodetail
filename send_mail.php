@@ -36,7 +36,7 @@ if (isset($_POST['part_name']))
 		</html>	
 	";
 	
-	print_r $_FILES;
+	print_r($_FILES);
 	
 	if (isset($_FILES["drawing"]))  {//загрузка документа
 		echo 'был прикреплен файл\r\n';
