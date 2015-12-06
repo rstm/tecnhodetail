@@ -138,7 +138,9 @@
 <div id="main-form">
 	<img id="close" src="images/close.jpg">
 	
-	<form id="request-form" novalidate>
+	<form id="request-form" enctype="multipart/form-data" novalidate>
+		<input type="hidden" name="MAX_FILE_SIZE" value="80000000000000">
+
 		<h2>Оставьте заявку</h2>
 		<div id="first-step">
 			
@@ -162,7 +164,7 @@
 				<a href="" id="upload_link">Прикрепить чертеж</a>
 			</div>
 			
-			<input id="upload" type="file" name="drawing"/>
+			<input id="upload" type="file" name="drawing" style="display:block;"/>
 			
 			<div class="field">
 				<label>Количество, штук: *</label>
