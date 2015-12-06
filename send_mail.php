@@ -36,14 +36,18 @@ if (isset($_POST['part_name']))
 		</html>	
 	";
 	
+	print_r $_FILES;
+	
 	if (isset($_FILES["drawing"]))  {//загрузка документа
+		echo 'был прикреплен файл\r\n';
 		if (is_uploaded_file($_FILES['drawing']['tmp_name'])) {
+			echo 'загрузился\r\n';
 			$tmp_name = $_FILES["drawing"]["tmp_name"];
 			$name = $_FILES["drawing"]["name"];
 			//$name = iconv('utf-8', 'cp1251', $name);
 			$path="{$_SERVER['DOCUMENT_ROOT']}/files/$name";
 			
-			if(!move_uploaded_file($tmp_name, $path)) $error = 'Файл не загрузился';
+			if(!move_uploaded_file($tmp_name, $path)) echo 'ошибка при перемещении\r\n';
 			else {
 				$fp = fopen($path,"rb");   
 				if (!$fp) { 
@@ -80,7 +84,10 @@ if (isset($_POST['part_name']))
 				// 	echo 'Письмо не отправлено. Свяжитесь, пожалуйста, с нами по контакному телефону или напишите нам на почту лично.';   
 				// }  else { print "Спасибо за запрос. <br> В самое ближайшее время наши специалисты свяжутся с Вами."; }
 				$message = $multipart;
+				echo 'всё как бы ок да';
 			}
+		} else {
+			echo 'не загрузился\r\n';
 		}
 	}
 		
