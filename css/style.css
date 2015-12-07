@@ -320,6 +320,7 @@ address .email {
 #clients img {
 	/*vertical-align: middle;*/
 	margin: 0 19px;
+	/*display: inline-block;*/
 }
 
 #clients .previous, #clients .next {
@@ -501,13 +502,21 @@ footer address {
 }
 
 #upload_link {
-	display: block;
     margin-left: 191px;
     font-size: 13px;
     margin-top: 5px;
     color: #0071BC;
     border-bottom: 1px dashed #0071BC;
     width: 122px;
+	display: inline-block;
+}
+
+.success_upload {
+	vertical-align: bottom;
+    display: inline-block;
+    color: #F6921E;
+    font-size: 17px;
+    line-height: 21px;
 }
 
 #main-form .btn {
@@ -579,7 +588,7 @@ span.error {
     color: #DC4545;
 }
 
-#final-step h2{
+#final-step h2 {
 	margin: 0 0 17px;
 }
 

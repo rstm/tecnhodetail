@@ -94,7 +94,7 @@ $(document).ready(function() {
     
   $('#clients .previous').on('click', function() {
     $('.clients-logos img.show').first().hide( "fast", function() {
-      $(this).removeClass('show').addClass('hide').appendTo('.clients-logos');
+      $(this).removeClass('show').addClass('hide').parent().appendTo('.clients-logos');
     });
     
     $('.clients-logos img.hide').first().show( "fast", function() {
@@ -104,10 +104,12 @@ $(document).ready(function() {
   
   $('#clients .next').on('click', function() {
     $('.clients-logos img.show').last().hide( "fast", function() {
-      $(this).removeClass('show').addClass('hide').appendTo('.clients-logos');
+      $(this).removeClass('show').addClass('hide').parent().appendTo('.clients-logos');
     });
     
-    $('.clients-logos img.hide').first().prependTo('.clients-logos').show( "fast", function() {
+    var hidden_image = $('.clients-logos img.hide').first();
+    $(hidden_image).parent().prependTo('.clients-logos');
+    $(hidden_image).show( "fast", function() {
       $(this).removeClass('hide').addClass('show');
     });
   });
@@ -116,6 +118,11 @@ $(document).ready(function() {
         e.preventDefault();
         $("#upload:hidden").trigger('click');
     });
+    
+    
+    $('#upload').on('change', function() {
+      $("#upload_link").after("<span class='success_upload'>&ensp;&#10004;</span>");
+    })
   
 });
 
