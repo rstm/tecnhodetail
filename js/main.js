@@ -92,7 +92,7 @@ $(document).ready(function() {
     e.preventDefault(); // avoid to execute the actual submit of the form.
   });
     
-  $('#clients .previous').on('click', function() {
+  $('#clients .next').on('click', function() {
     $('.clients-logos img.show').first().hide( "fast", function() {
       $(this).removeClass('show').addClass('hide').parent().appendTo('.clients-logos');
     });
@@ -102,7 +102,7 @@ $(document).ready(function() {
     });
   });
   
-  $('#clients .next').on('click', function() {
+  $('#clients .previous').on('click', function() {
     $('.clients-logos img.show').last().hide( "fast", function() {
       $(this).removeClass('show').addClass('hide').parent().appendTo('.clients-logos');
     });
