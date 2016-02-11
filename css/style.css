@@ -232,6 +232,14 @@ address .email {
 	font-size: 14px;
 	margin-left: 35px;
 	line-height: 25px;
+    margin-bottom: 7px;
+}
+
+#about ul {
+	font-size: 14px;
+    font-family: 'PT Serif';
+    margin-left: 51px;
+    font-weight: bold;
 }
 
 .quote-open {
