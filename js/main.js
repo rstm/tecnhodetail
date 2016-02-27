@@ -91,6 +91,8 @@ $(document).ready(function() {
 
     e.preventDefault(); // avoid to execute the actual submit of the form.
   });
+  
+  /* СТРЕЛКИ */
     
   $('#clients .next').on('click', function() {
     $('.clients-logos img.show').first().hide( "fast", function() {
@@ -113,6 +115,96 @@ $(document).ready(function() {
       $(this).removeClass('hide').addClass('show');
     });
   });
+  
+//   НОВОСТИ
+  
+  $('#news .next').on('click', function() {
+    
+    var first = $('.news-items a.show').first();
+    
+    $(first).parent().animate({
+        "margin-left": "-120px"
+    }, 200);
+    
+    $('.news-items').animate({
+        "opacity" : "0"
+    }, 200, function() {
+        $('.news-items a.show').first().removeClass('show').addClass('hide').parent().appendTo('.news-items');
+        $('.news-items a.hide').first().removeClass('hide').addClass('show');
+        $('.news-items a.show').first().removeClass('show').addClass('hide').parent().appendTo('.news-items');
+        $('.news-items a.hide').first().removeClass('hide').addClass('show');
+        $('.news-items a.show').first().removeClass('show').addClass('hide').parent().appendTo('.news-items');
+        
+        var last = $('.news-items a.hide').first();
+        $(last).removeClass('hide').addClass('show');
+        
+        $(last).parent().css("margin-right", "-120px");
+        
+        $(last).parent().animate({
+            "margin-right": "16px"
+        }, 200);
+        
+        $('.news-items').animate({
+            "opacity" : "1"
+        }, 200);
+        
+        $(first).parent().css("margin-left", "16px");
+    });
+    
+    
+  });
+  
+  
+  $('#news .previous').on('click', function() {
+    
+    var lastDisplayed = $('.news-items a.show').last();
+    
+    $(lastDisplayed).parent().animate({
+        "margin-right": "-120px"
+    }, 200);
+    
+    $('.news-items').animate({
+        "opacity" : "0"
+    }, 200, function() {        
+        $('.news-items a.show').last().removeClass('show').addClass('hide');
+        $('.news-items a.hide').last().removeClass('hide').addClass('show').parent().prependTo('.news-items');
+        $('.news-items a.show').last().removeClass('show').addClass('hide');
+        $('.news-items a.hide').last().removeClass('hide').addClass('show').parent().prependTo('.news-items');
+        $('.news-items a.show').last().removeClass('show').addClass('hide');
+        
+        var lastHidden = $('.news-items a.hide').last();
+        
+        $(lastHidden).removeClass('hide').addClass('show').parent().prependTo('.news-items');
+                
+        $(lastHidden).parent().css("margin-left", "-120px");
+        
+        $(lastHidden).parent().animate({
+            "margin-left": "16px"
+        }, 200);
+        
+        $('.news-items').animate({
+            "opacity" : "1"
+        }, 200);
+        
+        $(lastDisplayed).parent().css("margin-right", "16px");
+    });
+    
+    
+  });
+  
+//   $('#news .previous').on('click', function() {
+//     $('.news-items a.show').last().hide( "fast", function() {
+//       $(this).removeClass('show').addClass('hide').parent().appendTo('.news-items');
+//     });
+    
+//     var hidden_image = $('.news-items a.hide').last();
+//     $(hidden_image).parent().prependTo('.news-items');
+//     $(hidden_image).show( "fast", function() {
+//       $(this).removeClass('hide').addClass('show');
+//     });
+//   });
+  
+  /* //СТРЕЛКИ */
   
     $("#upload_link").on('click', function(e){
         e.preventDefault();

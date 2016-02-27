@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>ООО ПКФ "Технодеталь"</title>
+	<title>ООО ПКФ "Технодеталь" - металлобработка, лазерная резка в Набережных Челнах</title>
+    <meta name="description" content="Обработка листового металла методом рубки, гибки, штамповки, сварки, а также с применением лазерного раскроечного комплекса. Является резидентом КИП 'Мастер' г. Набережные Челны.">
+    <meta name="keywords" content="технодеталь,лазерная резка,обработка металла,листовой металл,гибка,сварка,штамповка,рубка,резидент кип мастер,набережные челны,камаз,сталь,станки">
 	<link href="fonts/roboto-medium/Roboto-Medium.css" rel="stylesheet" type="text/css"  /> 
 	<link href="fonts/pfdin/fonts.css" rel="stylesheet" type="text/css"  /> 
 	<link href="fonts/kelson/kelson.css" rel="stylesheet" type="text/css"  /> 
@@ -12,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<section>
+<section class="main">
 	<header>
 		<img class="logo" src="images/logo.jpg">
 		<address>
@@ -65,6 +67,7 @@
 		
 	</section>
 	
+    
 	<section id="products">
 		<h2>Продукция</h2>
 		<div class="figures">
@@ -100,6 +103,22 @@
 			
 		</div>
 	</section>
+    
+</section>
+    
+    <section id="clients">
+        <h2>Нам доверяют</h2>
+        <figure class="previous">
+        </figure>
+        <div class="clients-logos">
+            <a href="http://www.kama-e.ru/" target="_blank"><img class="show" src="images/clients/1.jpg"></a>
+            <a href="http://www.kamaz.ru/" target="_blank"><img class="show" src="images/clients/2.jpg"></a>
+            <a href="http://www.modine.com/" target="_blank"><img class="show" src="images/clients/3.jpg"></a>
+            <a href="http://bzr2.220km.ru/" target="_blank"><img class="hide" src="images/clients/4.jpg"></a>
+        </div>
+        <figure class="next">
+        </figure>
+    </section>
 	
 	<section id="start-request">
 		<h2>Оставьте заявку</h2>
@@ -113,21 +132,38 @@
 			Заполнить<span class="arrow">></span>
 		</button>
 	</section>
+    
+
+    
+    
+<section id="news">
+    <h2 class="section-header">Новости</h2>
+    <?
+        $feed = implode(file('http://metalinfo.ru/ru/news/rferrous.rss'));
+        $xml = simplexml_load_string($feed);
+        $json = json_encode($xml);
+        $news = json_decode($json,TRUE);
+    ?>
+
+    <figure class="previous">
+    </figure>
+    <div class="news-items">       
+        
+       
+        
+        <? for ($i = 0; $i < count($news['channel']['item']); $i ++) { ?>
+                <? $class = ($i < 3 ? "show" : "hide" ) ?>
+                <span>
+                    <a target="_blank" href="<?=$news['channel']['item'][$i]['link']?>" class="<?=$class?>">
+                        <?=$news['channel']['item'][$i]['title']?>
+                    </a>
+                </span>
+        <? } ?>
+        
+    </div>
+    <figure class="next">
+    </figure>
 </section>
-	
-	<section id="clients">
-		<h2>Нам доверяют</h2>
-		<figure class="previous">
-		</figure>
-		<div class="clients-logos">
-			<a href="http://www.kama-e.ru/" target="_blank"><img class="show" src="images/clients/1.jpg"></a>
-			<a href="http://www.kamaz.ru/" target="_blank"><img class="show" src="images/clients/2.jpg"></a>
-			<a href="http://www.modine.com/" target="_blank"><img class="show" src="images/clients/3.jpg"></a>
-			<a href="http://bzr2.220km.ru/" target="_blank"><img class="hide" src="images/clients/4.jpg"></a>
-		</div>
-		<figure class="next">
-		</figure>
-	</section>
 
 <section id="map">	
 	<!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2247.721342387877!2d52.43493801608239!3d55.71121530266595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43e01e807532ee39%3A0x2cda9d9cb3190a36!2z0J_RgNC-0LjQt9Cy0L7QtNGB0YLQstC10L3QvdGL0Lkg0L_RgC3QtCwgNDUsINCd0LDQsdC10YDQtdC20L3Ri9C1INCn0LXQu9C90YssINCg0LXRgdC_LiDQotCw0YLQsNGA0YHRgtCw0L0sIDQyMzgxMg!5e0!3m2!1sru!2sru!4v1448484373542" 

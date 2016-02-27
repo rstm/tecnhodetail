@@ -35,6 +35,10 @@ section {
 	width: 896px;
 }
 
+section.main {
+    height: 1332px;
+}
+
 /* ----------- HEADER ----------- */
 
 header, footer {
@@ -158,7 +162,6 @@ address .email {
 
 #products .figures {
 	float: right;
-	margin-bottom: 140px;
 }
 
 #products figure {
@@ -260,11 +263,11 @@ address .email {
 	width: 573px;
 	height: 355px;
 	/*padding: 62px 0 44px;*/
-	margin: 0 auto;
+	margin: 100px auto 0;
 	border: 4px solid #CCCCCC;
 }
 
-#start-request h2, #clients h2 {
+#start-request h2, #clients h2, .section-header {
 	font-family: 'Kelson Sans';
 	font-size: 32px;
 	font-weight: bold;
@@ -308,14 +311,15 @@ address .email {
 /* ----------- CLIENTS ----------- */
 
 
-#clients {
+#clients, #news {
 	text-align: center;
 	margin-top: 103px;
 	width: 960px;
 	margin: 103px auto 0;
+    clear: both;
 }
 
-#clients h2 {
+#clients h2, #news h2 {
 	margin-bottom: 50px;
 }
 
@@ -332,7 +336,7 @@ address .email {
 	/*display: inline-block;*/
 }
 
-#clients .previous, #clients .next {
+.previous, .next {
 	display: inline-block;
 	cursor: pointer;
 	width: 70px;
@@ -342,21 +346,47 @@ address .email {
 	/*vertical-align: middle;*/
 }
 
-#clients .previous {
+.previous {
 	background-image: url(../images/clients/previous.jpg)
 }
 
-#clients .next {
+.next {
 	background-image: url(../images/clients/next.jpg)
 }
 
-#clients .previous:hover {
+.previous:hover {
 	background-image: url(../images/clients/previous-hover.jpg)
 } 
 
-#clients .next:hover {
+.next:hover {
 	background-image: url(../images/clients/next-hover.jpg)
 }
+
+
+
+/* ----------- NEWS ----------- */
+
+.news-items {
+	width: 792px;
+	display: inline-block;
+	height: 121px;
+	vertical-align: top;
+    margin-top: 8px;
+}
+
+.news-items span {
+    width: 198px;
+    display: inline-block;
+    margin: 0 16px;
+    font-family: 'PT Serif';
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+/* ----------- //NEWS ----------- */
+
+
+
 
 /* ----------- MAP ----------- */
 
