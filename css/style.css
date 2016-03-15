@@ -17,7 +17,7 @@ a {
 }
 
 .hide {
-	display: none;
+	display: none !important;
 }
 
 .top_align {
@@ -364,7 +364,7 @@ address .email {
 
 
 
-/* ----------- NEWS ----------- */
+/* -----------NEWS----------- */
 
 .news-items {
 	width: 792px;
@@ -374,7 +374,7 @@ address .email {
     margin-top: 8px;
 }
 
-.news-items span {
+.news-items div {
     width: 198px;
     display: inline-block;
     margin: 0 16px;
@@ -383,7 +383,14 @@ address .email {
     vertical-align: middle;
 }
 
-/* ----------- //NEWS ----------- */
+.news_date {
+	font-size: 13px;
+    color: grey;
+    display: block;
+    line-height: 27px;
+}
+
+/* -----------//NEWS----------- */
 
 
 
