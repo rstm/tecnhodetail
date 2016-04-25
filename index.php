@@ -1,4 +1,5 @@
-	<!DOCTYPE html>
+<? header('Content-Type: text/html; charset=utf-8'); ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -153,11 +154,24 @@
         
         <? for ($i = 0; $i < count($news['channel']['item']); $i ++) { ?>
                 <? $class = ($i < 3 ? "show" : "hide" ) ?>
-                <span>
+                <div >
                     <a target="_blank" href="<?=$news['channel']['item'][$i]['link']?>" class="<?=$class?>">
                         <?=$news['channel']['item'][$i]['title']?>
-                    </a>
-                </span>
+                        <?
+	                    	$pubDate = $news['channel']['item'][$i]['pubDate'];
+	                    	$ru_month = array( 'Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря' );
+							$en_month = array( 'January', 'February', 'March', 'May', 'June', 'July', 'August', 'September', 'Oktober', 'November', 'December' );
+
+	                    	$formattedDate = date('j F Y', strtotime($pubDate));
+	                    	$formattedDate = str_replace( $en_month, $ru_month, $formattedDate )
+	                	?>           	                
+                    
+	                    <span class="news_date">
+	                    	<?=$formattedDate?>
+	                    </span>
+                    </a>    
+                	
+                </div>
         <? } ?>
         
     </div>
@@ -321,5 +335,35 @@
  
 
 </script>
+
+<!— Yandex.Metrika counter —>
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter35831505 = new Ya.Metrika({
+                    id:35831505,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/35831505" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!— /Yandex.Metrika counter —>
+
 </body>
 </html>
