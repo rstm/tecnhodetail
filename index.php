@@ -18,7 +18,7 @@
 	<header>
 		<img class="logo" src="images/logo.jpg">
 		<address>
-			<span class="phone">+7 (917) 395-42-66 &nbsp;/&nbsp; +7 (960) 068-55-23</span>
+			<span class="phone">+7 (960) 068-55-23</span>
 			<span class="email">info@techodetail.ru</span>
 		</address>
 	</header>
