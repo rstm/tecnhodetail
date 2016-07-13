@@ -20,7 +20,7 @@
 		<img class="logo" src="images/logo.jpg">
 		<address>
 			<span class="phone">+7 (960) 068-55-23</span>
-			<span class="email">info@techodetail.ru</span>
+			<span class="email">technodetal@yandex.ru</span>
 		</address>
 	</header>
 
