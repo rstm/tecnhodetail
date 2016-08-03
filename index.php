@@ -160,7 +160,7 @@
                         <?
 	                    	$pubDate = $news['channel']['item'][$i]['pubDate'];
 	                    	$ru_month = array( 'Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря' );
-							$en_month = array( 'January', 'February', 'March', 'May', 'June', 'July', 'August', 'September', 'Oktober', 'November', 'December' );
+							$en_month = array( 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'Oktober', 'November', 'December' );
 
 	                    	$formattedDate = date('j F Y', strtotime($pubDate));
 	                    	$formattedDate = str_replace( $en_month, $ru_month, $formattedDate )
